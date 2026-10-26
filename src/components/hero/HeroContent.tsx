@@ -4,7 +4,6 @@ import { CapabilityTabs } from './CapabilityTabs';
 export function HeroContent() {
   return (
     <div className="mx-auto w-full max-w-300 px-6 lg:px-12 pt-4 pb-20">
-      {/* Announcement Marquee Ticker (Figma #204:98989) */}
       <AnnouncementTicker />
 
       {/* Hero Headline & Actions */}
@@ -32,7 +31,6 @@ export function HeroContent() {
         </div>
       </div>
 
-      {/* Interactive Capability Tabs (Figma #204:432) */}
       <CapabilityTabs />
     </div>
   );

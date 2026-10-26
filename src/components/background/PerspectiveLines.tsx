@@ -1,7 +1,7 @@
 export function PerspectiveLines() {
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0 mx-auto max-w-360 overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-0 mx-auto max-w-300 overflow-hidden"
       aria-hidden="true"
     >
       {/* 1200px centered grid lines container */}

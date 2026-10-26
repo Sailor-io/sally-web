@@ -15,14 +15,9 @@ export function Navbar() {
           aria-label="Sally Home"
         >
           <img
-            src={logoLight}
+            src={theme === 'dark' ? logoDark : logoLight}
             alt="Sally"
-            className="h-9 w-auto dark:hidden"
-          />
-          <img
-            src={logoDark}
-            alt="Sally"
-            className="hidden h-9 w-auto dark:block"
+            className="h-9 w-auto"
           />
         </a>
 
