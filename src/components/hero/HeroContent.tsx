@@ -12,7 +12,7 @@ export function HeroContent() {
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] tracking-tight text-text-primary">
           Digital experiences built for ambitious businesses.
         </h1>
-        <p className="mt-6 max-w-[680px] font-sans text-lg sm:text-xl text-text-secondary leading-relaxed">
+        <p className="mt-6 max-w-170 font-sans text-lg sm:text-xl text-text-secondary leading-relaxed">
           Custom websites, digital products and user experiences designed to help your business stand out, connect with customers and grow.
         </p>
 

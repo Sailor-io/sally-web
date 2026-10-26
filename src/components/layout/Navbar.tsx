@@ -1,4 +1,6 @@
 import { useTheme } from '../../context/ThemeContext';
+import logoDark from '../../assets/svgs/Logo.svg';
+import logoLight from '../../assets/svgs/LogoLight.svg';
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -9,14 +11,19 @@ export function Navbar() {
         {/* Brand Logo */}
         <a
           href="/"
-          className="group flex items-center gap-2 text-2xl font-bold tracking-tight text-text-primary transition-opacity hover:opacity-80"
+          className="group flex items-center transition-opacity hover:opacity-80"
           aria-label="Sally Home"
         >
-          {/* Stylized Sally Wordmark */}
-          <div className="flex items-center gap-1.5 font-display text-[26px] tracking-tight">
-            <span>Sally</span>
-            <span className="h-2 w-2 rounded-full bg-secondary-300 animate-pulse" />
-          </div>
+          <img
+            src={logoLight}
+            alt="Sally"
+            className="h-9 w-auto dark:hidden"
+          />
+          <img
+            src={logoDark}
+            alt="Sally"
+            className="hidden h-9 w-auto dark:block"
+          />
         </a>
 
         {/* Action Controls & Navigation */}

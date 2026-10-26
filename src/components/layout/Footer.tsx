@@ -3,7 +3,7 @@ export function Footer() {
 
   return (
     <footer className="relative z-10 w-full transition-colors duration-300">
-      <div className="mx-auto max-w-[1200px] px-6 lg:px-12 py-12">
+      <div className="mx-auto max-w-300 px-6 lg:px-12 py-12">
         {/* Top dashed divider */}
         <div className="h-px w-full border-t border-dashed border-border-dashed/40 mb-8" />
 
