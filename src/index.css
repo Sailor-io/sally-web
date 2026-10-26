@@ -1,19 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
+/* ==========================================================================
+   Tailwind CSS v4 Theme Extensions
+   ========================================================================== */
+@theme {
+  /* Fonts */
+  --font-display: "Inter", "Inter Display", system-ui, -apple-system, sans-serif;
+  --font-sans: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Primitive Palette Tokens */
+  --color-primary-950: #050712;
+  --color-primary-800: #0C1633;
+  --color-primary-700: #0E1D45;
+  --color-primary-400: #274FAD;
+  --color-primary-300: #5276E1;
+  --color-primary-200: #93A3E5;
+
+  --color-secondary-300: #A9DC62;
+
+  --color-gray-950: #0C0C0E;
+  --color-gray-900: #18181B;
+  --color-gray-800: #27272A;
+  --color-gray-600: #52525B;
+  --color-gray-500: #71717A;
+  --color-gray-300: #D4D4D8;
+  --color-gray-100: #F4F4F5;
+
+  /* Semantic Theme Variables */
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-border-dashed: var(--border-dashed);
+
+  --color-tab-active-bg: var(--tab-active-bg);
+  --color-tab-active-text: var(--tab-active-text);
+  --color-tab-inactive-text: var(--tab-inactive-text);
+  --color-tab-inactive-border: var(--tab-inactive-border);
+
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-text: var(--btn-primary-text);
+  --color-btn-secondary-bg: var(--btn-secondary-bg);
+  --color-btn-secondary-text: var(--btn-secondary-text);
+
+  --color-ticker-bg: var(--ticker-bg);
+  --color-ticker-text: var(--ticker-text);
+}
+
+/* ==========================================================================
+   Design System Tokens (Figma: Sally Web Light & Dark Modes)
+   ========================================================================== */
+
 :root {
-  --text: #6b6375;
-  --text-primary: #FFFFFF;
+  /* --- Primitive Color Palettes --- */
+  /* Primary Blues */
   --primary-950: #050712;
+  --primary-800: #0C1633;
+  --primary-700: #0E1D45;
+  --primary-400: #274FAD;
+  --primary-300: #5276E1;
+  --primary-200: #93A3E5;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Secondary Lime Accent */
+  --secondary-300: #A9DC62;
 
-  font: 18px/145% var(--sans);
+  /* Grays / Neutrals */
+  --gray-950: #0C0C0E;
+  --gray-900: #18181B;
+  --gray-800: #27272A;
+  --gray-600: #52525B;
+  --gray-500: #71717A;
+  --gray-300: #D4D4D8;
+  --gray-100: #F4F4F5;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-family-display: var(--font-display);
+  --font-family-body: var(--font-sans);
+
+  /* --- Light Mode Semantic Values (Default) --- */
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --bg-subtle: #F4F4F5;
+  --bg-surface: #FFFFFF;
+  --bg-card: #F4F4F5;
+
+  --text-primary: #27272A;
+  --text-secondary: #52525B;
+  --text-muted: #71717A;
+
+  --border-subtle: #E4E4E7;
+  --border-dashed: #D4D4D8;
+
+  /* Capability Tabs */
+  --tab-active-bg: #274FAD;
+  --tab-active-text: #FFFFFF;
+  --tab-inactive-text: #52525B;
+  --tab-inactive-border: #D4D4D8;
+
+  /* Action Buttons */
+  --btn-primary-bg: #A9DC62;
+  --btn-primary-text: #27272A;
+  --btn-secondary-bg: #F4F4F5;
+  --btn-secondary-text: #27272A;
+
+  /* Marquee Ticker Banner */
+  --ticker-bg: #93A3E5;
+  --ticker-text: #0E1D45;
+
+  /* Theme Switcher */
+  --toggle-bg: #F4F4F5;
+  --toggle-active-bg: #5276E1;
+  --toggle-active-icon: #FFFFFF;
+  --toggle-inactive-icon: #52525B;
+
+  /* Base Body Config */
+  font-family: var(--font-family-body);
+  font-size: 18px;
+  line-height: 1.45;
   letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--text-primary);
+  background-color: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,22 +138,135 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+/* Explicit Light Mode Override */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --bg-subtle: #F4F4F5;
+  --bg-surface: #FFFFFF;
+  --bg-card: #F4F4F5;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  --text-primary: #27272A;
+  --text-secondary: #52525B;
+  --text-muted: #71717A;
+
+  --border-subtle: #E4E4E7;
+  --border-dashed: #D4D4D8;
+
+  --tab-active-bg: #274FAD;
+  --tab-active-text: #FFFFFF;
+  --tab-inactive-text: #52525B;
+  --tab-inactive-border: #D4D4D8;
+
+  --btn-primary-bg: #A9DC62;
+  --btn-primary-text: #27272A;
+  --btn-secondary-bg: #F4F4F5;
+  --btn-secondary-text: #27272A;
+
+  --ticker-bg: #93A3E5;
+  --ticker-text: #0E1D45;
+
+  --toggle-bg: #F4F4F5;
+  --toggle-active-bg: #5276E1;
+  --toggle-active-icon: #FFFFFF;
+  --toggle-inactive-icon: #52525B;
+}
+
+/* Explicit Dark Mode (Class or Attribute) */
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #050712;
+  --bg-subtle: #0C1633;
+  --bg-surface: #0E1D45;
+  --bg-card: #18181B;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #F4F4F5;
+  --text-muted: #D4D4D8;
+
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-dashed: #27272A;
+
+  /* Capability Tabs */
+  --tab-active-bg: #0C1633;
+  --tab-active-text: #FFFFFF;
+  --tab-inactive-text: #D4D4D8;
+  --tab-inactive-border: #27272A;
+
+  /* Action Buttons */
+  --btn-primary-bg: #A9DC62;
+  --btn-primary-text: #27272A;
+  --btn-secondary-bg: #F4F4F5;
+  --btn-secondary-text: #27272A;
+
+  /* Marquee Ticker Banner */
+  --ticker-bg: #93A3E5;
+  --ticker-text: #0E1D45;
+
+  /* Theme Switcher */
+  --toggle-bg: #0C1633;
+  --toggle-active-bg: #5276E1;
+  --toggle-active-icon: #FFFFFF;
+  --toggle-inactive-icon: #93A3E5;
+}
+
+/* System Preference Dark Mode (when no data-theme="light" is explicitly forced) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #050712;
+    --bg-subtle: #0C1633;
+    --bg-surface: #0E1D45;
+    --bg-card: #18181B;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #F4F4F5;
+    --text-muted: #D4D4D8;
+
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-dashed: #27272A;
+
+    --tab-active-bg: #0C1633;
+    --tab-active-text: #FFFFFF;
+    --tab-inactive-text: #D4D4D8;
+    --tab-inactive-border: #27272A;
+
+    --btn-primary-bg: #A9DC62;
+    --btn-primary-text: #27272A;
+    --btn-secondary-bg: #F4F4F5;
+    --btn-secondary-text: #27272A;
+
+    --ticker-bg: #93A3E5;
+    --ticker-text: #0E1D45;
+
+    --toggle-bg: #0C1633;
+    --toggle-active-bg: #5276E1;
+    --toggle-active-icon: #FFFFFF;
+    --toggle-inactive-icon: #93A3E5;
   }
 }
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
