@@ -12,7 +12,7 @@ export function Footer() {
           <p>© Copyright {currentYear} Sally. All rights reserved.</p>
 
           {/* Secondary links / badge */}
-          <div className="flex items-center gap-6">
+          {/* <div className="flex items-center gap-6">
             <a
               href="#privacy"
               className="transition-colors hover:text-text-primary"
@@ -29,7 +29,7 @@ export function Footer() {
               <span className="h-1.5 w-1.5 rounded-full bg-secondary-300" />
               Available for work
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

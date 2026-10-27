@@ -38,7 +38,7 @@ export function App() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="overflow-hidden"
+                className="w-full"
               >
                 <ProjectsTopContent />
               </motion.div>
@@ -63,7 +63,7 @@ export function App() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="overflow-hidden"
+                className="w-full"
               >
                 <HeroMainContent onNavigateToProjects={handleNavigateToProjects} />
               </motion.div>
@@ -79,7 +79,7 @@ export function App() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
-                className="overflow-hidden"
+                className="w-full"
               >
                 <ProjectsBottomContent />
               </motion.div>
