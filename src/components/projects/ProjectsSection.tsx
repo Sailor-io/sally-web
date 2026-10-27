@@ -1,5 +1,59 @@
+import { useRef } from 'react';
+import { motion } from 'motion/react';
 import { BlueprintFrame } from '../common/BlueprintFrame';
 import { AnnouncementTicker } from '../hero/AnnouncementTicker';
+
+const STICKER_PILLS = [
+  {
+    id: 'websites',
+    label: 'websites',
+    baseRotate: -3,
+    className:
+      'rounded-full bg-primary-400 px-6 py-2.5 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg',
+  },
+  {
+    id: 'mobile-apps',
+    label: 'mobile apps',
+    baseRotate: 3,
+    className:
+      'rounded-3xl bg-secondary-300 px-7 py-3 text-gray-950 font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg',
+  },
+  {
+    id: 'dashboards',
+    label: 'dashboards',
+    baseRotate: -2,
+    className:
+      'rounded-full bg-primary-700 px-7 py-2.5 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg',
+  },
+  {
+    id: 'ecommerce',
+    label: 'e-commerce',
+    baseRotate: 1,
+    className:
+      'rounded-full bg-emerald-800 px-7 py-2.5 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg',
+  },
+  {
+    id: 'maintenance',
+    label: 'maintenance',
+    baseRotate: -12,
+    className:
+      'rounded-2xl bg-primary-300 px-6 py-2 text-white font-sans text-lg sm:text-xl font-bold tracking-tight shadow-lg',
+  },
+  {
+    id: 'devops',
+    label: 'devops',
+    baseRotate: -18,
+    className:
+      'rounded-2xl bg-lime-700 px-5 py-1.5 text-white font-sans text-base sm:text-lg font-bold tracking-tight shadow-lg',
+  },
+  {
+    id: 'cloud-infrastructure',
+    label: 'cloud infrastructure',
+    baseRotate: 2,
+    className:
+      'rounded-full bg-primary-400 px-8 py-3 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg',
+  },
+];
 
 export function ProjectsTopContent() {
   return (
@@ -72,6 +126,8 @@ export function ProjectsTopContent() {
 }
 
 export function ProjectsBottomContent() {
+  const constraintsRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="w-full">
       {/* Row 2 of Project Cards */}
@@ -128,43 +184,46 @@ export function ProjectsBottomContent() {
         </div>
       </BlueprintFrame>
 
-      {/* Bottom Sticker Pills Pile */}
-      <div className="relative mt-20 pt-12 pb-8 overflow-hidden select-none">
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
-          {/* websites */}
-          <div className="transform -rotate-3 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-full bg-primary-400 px-6 py-2.5 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg">
-            websites
-          </div>
-
-          {/* mobile apps */}
-          <div className="transform rotate-3 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-3xl bg-secondary-300 px-7 py-3 text-gray-950 font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg">
-            mobile apps
-          </div>
-
-          {/* dashboards */}
-          <div className="transform -rotate-2 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-full bg-primary-700 px-7 py-2.5 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg">
-            dashboards
-          </div>
-
-          {/* e-commerce */}
-          <div className="transform rotate-1 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-full bg-emerald-800 px-7 py-2.5 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg">
-            e-commerce
-          </div>
-
-          {/* maintenance */}
-          <div className="transform -rotate-12 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-2xl bg-primary-300 px-6 py-2 text-white font-sans text-lg sm:text-xl font-bold tracking-tight shadow-lg">
-            maintenance
-          </div>
-
-          {/* devops */}
-          <div className="transform -rotate-18 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-2xl bg-lime-700 px-5 py-1.5 text-white font-sans text-base sm:text-lg font-bold tracking-tight shadow-lg">
-            devops
-          </div>
-
-          {/* cloud infrastructure */}
-          <div className="transform rotate-2 hover:rotate-0 transition-transform duration-200 cursor-pointer rounded-full bg-primary-400 px-8 py-3 text-white font-sans text-xl sm:text-2xl font-bold tracking-tight shadow-lg">
-            cloud infrastructure
-          </div>
+      {/* Bottom Interactive Bouncy Sticker Pills Pile */}
+      <div
+        ref={constraintsRef}
+        className="relative mt-20 pt-12 pb-12 select-none"
+      >
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-4xl mx-auto p-4">
+          {STICKER_PILLS.map((pill) => (
+            <motion.div
+              key={pill.id}
+              drag
+              dragConstraints={constraintsRef}
+              dragElastic={0.65}
+              dragTransition={{
+                bounceStiffness: 450,
+                bounceDamping: 20,
+                power: 0.2,
+              }}
+              whileHover={{
+                scale: 1.09,
+                rotate: pill.baseRotate + (pill.baseRotate >= 0 ? -4 : 4),
+                cursor: 'grab',
+                transition: { type: 'spring', stiffness: 400, damping: 15 },
+              }}
+              whileTap={{
+                scale: 0.93,
+                cursor: 'grabbing',
+                transition: { type: 'spring', stiffness: 500, damping: 15 },
+              }}
+              whileDrag={{
+                scale: 1.15,
+                zIndex: 50,
+                cursor: 'grabbing',
+                boxShadow: '0 25px 35px -5px rgba(0, 0, 0, 0.5)',
+              }}
+              initial={{ rotate: pill.baseRotate }}
+              className={`touch-none cursor-grab active:cursor-grabbing select-none transition-shadow ${pill.className}`}
+            >
+              {pill.label}
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
