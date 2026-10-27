@@ -2,16 +2,22 @@ import { useTheme } from '../../context/ThemeContext';
 import logoDark from '../../assets/svgs/Logo.svg';
 import logoLight from '../../assets/svgs/LogoLight.svg';
 
-export function Navbar() {
+interface NavbarProps {
+  onNavigateToProjects?: () => void;
+  onNavigateToHome?: () => void;
+}
+
+export function Navbar({ onNavigateToProjects, onNavigateToHome }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full transition-colors duration-300">
+    <header className="sticky top-0 z-50 w-full transition-colors duration-300 backdrop-blur-md bg-bg/85">
       <div className="mx-auto flex h-20 max-w-300 items-center justify-between px-6 lg:px-12">
         {/* Brand Logo */}
-        <a
-          href="/"
-          className="group flex items-center transition-opacity hover:opacity-80"
+        <button
+          type="button"
+          onClick={onNavigateToHome}
+          className="group flex items-center transition-opacity hover:opacity-80 cursor-pointer bg-transparent border-0 p-0"
           aria-label="Sally Home"
         >
           <img
@@ -19,17 +25,18 @@ export function Navbar() {
             alt="Sally"
             className="h-9 w-auto"
           />
-        </a>
+        </button>
 
         {/* Action Controls & Navigation */}
         <div className="flex items-center gap-4 sm:gap-6">
           <nav className="flex items-center gap-2 sm:gap-4">
-            <a
-              href="#projects"
-              className="rounded-lg px-3.5 py-2 font-sans text-base font-semibold text-text-secondary transition-colors hover:text-text-primary"
+            <button
+              type="button"
+              onClick={onNavigateToProjects}
+              className="rounded-lg px-3.5 py-2 font-sans text-base font-semibold text-text-secondary transition-colors hover:text-text-primary cursor-pointer bg-transparent border-0"
             >
               Projects
-            </a>
+            </button>
 
             <a
               href="#contact"
@@ -39,11 +46,11 @@ export function Navbar() {
             </a>
           </nav>
 
-          {/* Theme Toggle Pill Switch (Figma #368:111559 mode frame) */}
+          {/* Theme Toggle Pill Switch */}
           <button
             type="button"
             onClick={toggleTheme}
-            className="relative flex items-center rounded-full p-1 transition-colors duration-200 bg-gray-100 dark:bg-primary-800 border border-border-subtle"
+            className="relative flex items-center rounded-full p-1 transition-colors duration-200 bg-gray-100 dark:bg-primary-800 border border-border-subtle cursor-pointer"
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           >
             {/* Sliding Pill Indicator */}
