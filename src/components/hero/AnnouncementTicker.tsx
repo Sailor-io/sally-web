@@ -1,22 +1,40 @@
-export function AnnouncementTicker() {
+import { BlueprintFrame } from '../common/BlueprintFrame';
+
+interface AnnouncementTickerProps {
+  className?: string;
+  showGuides?: boolean;
+}
+
+export function AnnouncementTicker({
+  className = '',
+  showGuides = true,
+}: AnnouncementTickerProps) {
   return (
-    <div className="relative mb-12 overflow-hidden rounded-md bg-ticker-bg py-2.5 text-ticker-text shadow-sm">
-      <div className="flex w-max animate-marquee items-center gap-4 text-xs sm:text-sm font-semibold tracking-wider uppercase">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className="flex items-center gap-4">
-            <span>World-Class Digital Products</span>
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M6 0L7.5 4.5L12 6L7.5 7.5L6 12L4.5 7.5L0 6L4.5 4.5L6 0Z" />
-            </svg>
-          </div>
-        ))}
+    <BlueprintFrame
+      showNodes={true}
+      showHorizontalGuides={showGuides}
+      borderStyle="y"
+      className={`my-6 w-full ${className}`}
+    >
+      <div className="relative overflow-hidden bg-ticker-bg py-2.5 text-ticker-text shadow-sm select-none">
+        <div className="flex w-max animate-marquee items-center gap-6 text-[13px] font-bold tracking-[0.16em] uppercase">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className="flex items-center gap-6 shrink-0">
+              <span>World-Class Digital Products</span>
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+                className="opacity-90"
+              >
+                <path d="M8 0C8 4.418 11.582 8 16 8C11.582 8 8 11.582 8 16C8 11.582 4.418 8 0 8C4.418 8 8 4.418 8 0Z" />
+              </svg>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </BlueprintFrame>
   );
 }
