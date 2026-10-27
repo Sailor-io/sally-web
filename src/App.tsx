@@ -1,79 +1,90 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ThemeProvider } from './context/ThemeProvider';
 import { LandingLayout } from './components/layout/LandingLayout';
-import { HeroContent } from './components/hero/HeroContent';
-import { ProjectsSection } from './components/projects/ProjectsSection';
-import { BlueprintStarNode } from './components/common/BlueprintFrame';
+import { HeroMainContent } from './components/hero/HeroContent';
+import { AnnouncementTicker } from './components/hero/AnnouncementTicker';
+import { ProjectsTopContent, ProjectsBottomContent } from './components/projects/ProjectsSection';
 
 export function App() {
   const [activeView, setActiveView] = useState<'hero' | 'projects'>('hero');
 
   const handleNavigateToProjects = () => {
+    if (activeView === 'projects') return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveView('projects');
-    const projectsEl = document.getElementById('projects-view');
-    if (projectsEl) {
-      projectsEl.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   const handleNavigateToHome = () => {
-    setActiveView('hero');
+    if (activeView === 'hero') return;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveView('hero');
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY;
-      const windowHeight = window.innerHeight;
-      if (scrollPos > windowHeight * 0.45) {
-        if (activeView !== 'projects') setActiveView('projects');
-      } else {
-        if (activeView !== 'hero') setActiveView('hero');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeView]);
 
   return (
     <ThemeProvider>
       <LandingLayout
+        activeView={activeView}
         onNavigateToProjects={handleNavigateToProjects}
         onNavigateToHome={handleNavigateToHome}
       >
-        {/* Single-Page Animated View Container */}
-        <div className="relative w-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
-          {/* Hero Section View */}
-          <section
-            id="hero-view"
-            className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              activeView === 'hero'
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-40 -translate-y-8'
-            }`}
-          >
-            <HeroContent onNavigateToProjects={handleNavigateToProjects} />
-          </section>
+        <div className="mx-auto w-full max-w-300 px-6 lg:px-12 pt-2 sm:pt-4 pb-24">
+          {/* Projects View Top: Header & Row 1 (Expands smoothly above the marquee ticker) */}
+          <AnimatePresence initial={false}>
+            {activeView === 'projects' && (
+              <motion.div
+                key="projects-top"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="overflow-hidden"
+              >
+                <ProjectsTopContent />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-          {/* Section Divider Line with Blueprint corner nodes */}
-          <div className="relative mx-auto max-w-300 px-6 lg:px-12 my-8">
-            <div className="h-px w-full border-t border-dashed border-border-dashed opacity-60" />
-            <BlueprintStarNode className="left-6 lg:left-12 top-0 -translate-x-1/2 -translate-y-1/2" />
-            <BlueprintStarNode className="right-6 lg:right-12 top-0 translate-x-1/2 -translate-y-1/2" />
-          </div>
-
-          {/* Projects Section View */}
-          <section
-            id="projects-view"
-            className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              activeView === 'projects'
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-90'
-            }`}
+          {/* Shared Marquee Ticker: Physically glides from the top down to the center between Row 1 and Row 2 */}
+          <motion.div
+            layout="position"
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full my-6 sm:my-8"
           >
-            <ProjectsSection onBackToHome={handleNavigateToHome} />
-          </section>
+            <AnnouncementTicker showGuides={true} />
+          </motion.div>
+
+          {/* Hero View Content: Headline & Capability Tabs (Collapses when going to projects) */}
+          <AnimatePresence initial={false}>
+            {activeView === 'hero' && (
+              <motion.div
+                key="hero-content"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="overflow-hidden"
+              >
+                <HeroMainContent onNavigateToProjects={handleNavigateToProjects} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Projects View Bottom: Row 2 & Sticker Pills (Expands smoothly below the marquee ticker) */}
+          <AnimatePresence initial={false}>
+            {activeView === 'projects' && (
+              <motion.div
+                key="projects-bottom"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
+                className="overflow-hidden"
+              >
+                <ProjectsBottomContent />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </LandingLayout>
     </ThemeProvider>

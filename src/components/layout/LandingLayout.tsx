@@ -6,12 +6,14 @@ import { Footer } from './Footer';
 
 interface LandingLayoutProps {
   children: React.ReactNode;
+  activeView?: 'hero' | 'projects';
   onNavigateToProjects?: () => void;
   onNavigateToHome?: () => void;
 }
 
 export function LandingLayout({
   children,
+  activeView = 'hero',
   onNavigateToProjects,
   onNavigateToHome,
 }: LandingLayoutProps) {
@@ -25,6 +27,7 @@ export function LandingLayout({
 
       {/* Fixed/Sticky Top Navigation */}
       <Navbar
+        activeView={activeView}
         onNavigateToProjects={onNavigateToProjects}
         onNavigateToHome={onNavigateToHome}
       />

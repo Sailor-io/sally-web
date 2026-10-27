@@ -5,9 +5,10 @@ import logoLight from '../../assets/svgs/LogoLight.svg';
 interface NavbarProps {
   onNavigateToProjects?: () => void;
   onNavigateToHome?: () => void;
+  activeView?: 'hero' | 'projects';
 }
 
-export function Navbar({ onNavigateToProjects, onNavigateToHome }: NavbarProps) {
+export function Navbar({ onNavigateToProjects, onNavigateToHome, activeView = 'hero' }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -33,7 +34,11 @@ export function Navbar({ onNavigateToProjects, onNavigateToHome }: NavbarProps) 
             <button
               type="button"
               onClick={onNavigateToProjects}
-              className="rounded-lg px-3.5 py-2 font-sans text-base font-semibold text-text-secondary transition-colors hover:text-text-primary cursor-pointer bg-transparent border-0"
+              className={`rounded-lg px-3.5 py-2 font-sans text-base font-semibold transition-colors cursor-pointer bg-transparent border-0 ${
+                activeView === 'projects'
+                  ? 'text-primary-400 font-bold'
+                  : 'text-text-secondary hover:text-text-primary'
+              }`}
             >
               Projects
             </button>

@@ -5,11 +5,9 @@ interface HeroContentProps {
   onNavigateToProjects?: () => void;
 }
 
-export function HeroContent({ onNavigateToProjects }: HeroContentProps) {
+export function HeroMainContent({ onNavigateToProjects }: HeroContentProps) {
   return (
-    <div className="mx-auto w-full max-w-300 px-6 lg:px-12 pt-2 sm:pt-4 pb-12 sm:pb-16">
-      <AnnouncementTicker />
-
+    <div className="w-full">
       {/* Hero Headline & Actions */}
       <div className="max-w-205 pt-2 sm:pt-3 pb-6 sm:pb-8">
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.12] tracking-tight text-text-primary">
@@ -37,6 +35,15 @@ export function HeroContent({ onNavigateToProjects }: HeroContentProps) {
       </div>
 
       <CapabilityTabs />
+    </div>
+  );
+}
+
+export function HeroContent({ onNavigateToProjects }: HeroContentProps) {
+  return (
+    <div className="mx-auto w-full max-w-300 px-6 lg:px-12 pt-2 sm:pt-4 pb-12 sm:pb-16">
+      <AnnouncementTicker />
+      <HeroMainContent onNavigateToProjects={onNavigateToProjects} />
     </div>
   );
 }
