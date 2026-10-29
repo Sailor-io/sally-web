@@ -6,7 +6,7 @@ const CAPABILITY_TABS = [
   'WEBSITE DEVELOPMENT',
   'WEBSITE DESIGN',
   'MOBILE DEVELOPMENT',
-  'MOBILE DESIGN',
+  'APP DESIGN',
   'WEBSITE MANAGEMENT',
 ];
 
@@ -46,8 +46,8 @@ export function CapabilityTabs() {
         </div>
       </BlueprintFrame>
 
-      {/* Hero Showcase (Code Editor + Web Mockup) */}
-      <HeroShowcase />
+      {/* Hero Showcase (Code Editor + Web Mockup / Design Mockup) */}
+      <HeroShowcase activeTab={activeTab} />
     </div>
   );
 }
