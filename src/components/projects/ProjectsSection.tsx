@@ -1,7 +1,85 @@
 import { useRef } from 'react';
 import { motion } from 'motion/react';
-import { BlueprintFrame } from '../common/BlueprintFrame';
 import { AnnouncementTicker } from '../hero/AnnouncementTicker';
+import { ProjectAccordion, type ProjectItem } from './ProjectAccordion';
+
+const DUMMY_PROJECTS_ROW_1: ProjectItem[] = [
+  {
+    id: 'kroma',
+    number: '01',
+    title: 'Kroma Digital Studio',
+    description: 'Modern portfolio and interactive digital experience for an avant-garde design agency.',
+    tag: 'Web Design / UI',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+  {
+    id: 'apex',
+    number: '02',
+    title: 'Apex Cloud Platform',
+    description: 'Unified infrastructure management console and real-time observability suite.',
+    tag: 'SaaS Dashboard',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+  {
+    id: 'verve',
+    number: '03',
+    title: 'Verve Mobile Pay',
+    description: 'Next-generation frictionless mobile banking and global cross-border payments.',
+    tag: 'Mobile App / Fintech',
+    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+  {
+    id: 'aura',
+    number: '04',
+    title: 'Aura Living Commerce',
+    description: 'Immersive headless e-commerce storefront for sustainable luxury lifestyle.',
+    tag: 'E-Commerce / Brand',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+];
+
+const DUMMY_PROJECTS_ROW_2: ProjectItem[] = [
+  {
+    id: 'nexus',
+    number: '05',
+    title: 'Nexus AI Engine',
+    description: 'Enterprise generative AI platform for autonomous customer workflows and analytics.',
+    tag: 'Artificial Intelligence',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+  {
+    id: 'strata',
+    number: '06',
+    title: 'Strata Supply Chain',
+    description: 'End-to-end supply chain visibility and automated inventory dispatch system.',
+    tag: 'Logistics Enterprise',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+  {
+    id: 'beacon',
+    number: '07',
+    title: 'Beacon Health Tracker',
+    description: 'Biometric telemetry monitoring and proactive health intelligence mobile app.',
+    tag: 'HealthTech / Mobile',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+  {
+    id: 'lumina',
+    number: '08',
+    title: 'Lumina Smart Living',
+    description: 'Connected IoT home management suite with intuitive voice & touch automation.',
+    tag: 'IoT / Hardware UI',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
+    link: '#case-study',
+  },
+];
 
 const STICKER_PILLS = [
   {
@@ -68,59 +146,8 @@ export function ProjectsTopContent() {
         </p>
       </div>
 
-      {/* Row 1 of Project Cards */}
-      <BlueprintFrame
-        showNodes={true}
-        showHorizontalGuides={true}
-        borderStyle="all"
-        className="w-full bg-bg-subtle/50"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 divide-y md:divide-y-0 md:divide-x divide-dashed divide-border-dashed">
-          {/* Card 1: Wide Featured Card */}
-          <div className="md:col-span-5 bg-white p-7 sm:p-9 flex flex-col justify-between min-h-90 text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-44 w-full rounded-sm bg-linear-to-br from-gray-100 to-gray-200 border border-border-subtle flex items-center justify-center p-4">
-              <span className="text-xs font-semibold tracking-wider text-gray-400 uppercase">
-                Featured Case Study
-              </span>
-            </div>
-            <div className="pt-6">
-              <h3 className="font-display text-xl font-bold text-gray-900 tracking-tight">
-                Project title
-              </h3>
-              <p className="mt-1.5 text-sm text-gray-500 font-sans">
-                One line write up about the project
-              </p>
-              <a
-                href="#case-study"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
-              >
-                Learn more
-              </a>
-            </div>
-          </div>
-
-          {/* Card 2: Vertical Card */}
-          <div className="md:col-span-2.33 bg-white p-6 min-h-90 flex flex-col justify-end text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-full w-full rounded-sm bg-linear-to-br from-gray-50 to-gray-100 border border-border-subtle flex items-center justify-center">
-              <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">01</span>
-            </div>
-          </div>
-
-          {/* Card 3: Vertical Card */}
-          <div className="md:col-span-2.33 bg-white p-6 min-h-90 flex flex-col justify-end text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-full w-full rounded-sm bg-linear-to-br from-gray-50 to-gray-100 border border-border-subtle flex items-center justify-center">
-              <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">02</span>
-            </div>
-          </div>
-
-          {/* Card 4: Vertical Card */}
-          <div className="md:col-span-2.33 bg-white p-6 min-h-90 flex flex-col justify-end text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-full w-full rounded-sm bg-linear-to-br from-gray-50 to-gray-100 border border-border-subtle flex items-center justify-center">
-              <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">03</span>
-            </div>
-          </div>
-        </div>
-      </BlueprintFrame>
+      {/* Row 1 Interactive Project Accordion */}
+      <ProjectAccordion projects={DUMMY_PROJECTS_ROW_1} defaultActiveIndex={0} />
     </div>
   );
 }
@@ -130,59 +157,8 @@ export function ProjectsBottomContent() {
 
   return (
     <div className="w-full">
-      {/* Row 2 of Project Cards */}
-      <BlueprintFrame
-        showNodes={true}
-        showHorizontalGuides={true}
-        borderStyle="all"
-        className="w-full bg-bg-subtle/50"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-0 divide-y md:divide-y-0 md:divide-x divide-dashed divide-border-dashed">
-          {/* Card 1: Wide Featured Card */}
-          <div className="md:col-span-5 bg-white p-7 sm:p-9 flex flex-col justify-between min-h-90 text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-44 w-full rounded-sm bg-linear-to-br from-gray-100 to-gray-200 border border-border-subtle flex items-center justify-center p-4">
-              <span className="text-xs font-semibold tracking-wider text-gray-400 uppercase">
-                Featured Case Study
-              </span>
-            </div>
-            <div className="pt-6">
-              <h3 className="font-display text-xl font-bold text-gray-900 tracking-tight">
-                Project title
-              </h3>
-              <p className="mt-1.5 text-sm text-gray-500 font-sans">
-                One line write up about the project
-              </p>
-              <a
-                href="#case-study"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors"
-              >
-                Learn more
-              </a>
-            </div>
-          </div>
-
-          {/* Card 2: Vertical Card */}
-          <div className="md:col-span-2.33 bg-white p-6 min-h-90 flex flex-col justify-end text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-full w-full rounded-sm bg-linear-to-br from-gray-50 to-gray-100 border border-border-subtle flex items-center justify-center">
-              <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">04</span>
-            </div>
-          </div>
-
-          {/* Card 3: Vertical Card */}
-          <div className="md:col-span-2.33 bg-white p-6 min-h-90 flex flex-col justify-end text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-full w-full rounded-sm bg-linear-to-br from-gray-50 to-gray-100 border border-border-subtle flex items-center justify-center">
-              <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">05</span>
-            </div>
-          </div>
-
-          {/* Card 4: Vertical Card */}
-          <div className="md:col-span-2.33 bg-white p-6 min-h-90 flex flex-col justify-end text-gray-900 group transition-all hover:bg-gray-50">
-            <div className="h-full w-full rounded-sm bg-linear-to-br from-gray-50 to-gray-100 border border-border-subtle flex items-center justify-center">
-              <span className="text-[11px] font-semibold text-gray-400 tracking-wider uppercase">06</span>
-            </div>
-          </div>
-        </div>
-      </BlueprintFrame>
+      {/* Row 2 Interactive Project Accordion */}
+      <ProjectAccordion projects={DUMMY_PROJECTS_ROW_2} defaultActiveIndex={0} />
 
       {/* Bottom Interactive Bouncy Sticker Pills Pile */}
       <div
