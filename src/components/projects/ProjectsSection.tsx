@@ -1,85 +1,8 @@
 import { useRef } from 'react';
 import { motion } from 'motion/react';
 import { AnnouncementTicker } from '../hero/AnnouncementTicker';
-import { ProjectAccordion, type ProjectItem } from './ProjectAccordion';
-
-const DUMMY_PROJECTS_ROW_1: ProjectItem[] = [
-  {
-    id: 'kroma',
-    number: '01',
-    title: 'Kroma Digital Studio',
-    description: 'Modern portfolio and interactive digital experience for an avant-garde design agency.',
-    tag: 'Web Design / UI',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-  {
-    id: 'apex',
-    number: '02',
-    title: 'Apex Cloud Platform',
-    description: 'Unified infrastructure management console and real-time observability suite.',
-    tag: 'SaaS Dashboard',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-  {
-    id: 'verve',
-    number: '03',
-    title: 'Verve Mobile Pay',
-    description: 'Next-generation frictionless mobile banking and global cross-border payments.',
-    tag: 'Mobile App / Fintech',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-  {
-    id: 'aura',
-    number: '04',
-    title: 'Aura Living Commerce',
-    description: 'Immersive headless e-commerce storefront for sustainable luxury lifestyle.',
-    tag: 'E-Commerce / Brand',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-];
-
-const DUMMY_PROJECTS_ROW_2: ProjectItem[] = [
-  {
-    id: 'nexus',
-    number: '05',
-    title: 'Nexus AI Engine',
-    description: 'Enterprise generative AI platform for autonomous customer workflows and analytics.',
-    tag: 'Artificial Intelligence',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-  {
-    id: 'strata',
-    number: '06',
-    title: 'Strata Supply Chain',
-    description: 'End-to-end supply chain visibility and automated inventory dispatch system.',
-    tag: 'Logistics Enterprise',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-  {
-    id: 'beacon',
-    number: '07',
-    title: 'Beacon Health Tracker',
-    description: 'Biometric telemetry monitoring and proactive health intelligence mobile app.',
-    tag: 'HealthTech / Mobile',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-  {
-    id: 'lumina',
-    number: '08',
-    title: 'Lumina Smart Living',
-    description: 'Connected IoT home management suite with intuitive voice & touch automation.',
-    tag: 'IoT / Hardware UI',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-    link: '#case-study',
-  },
-];
+import { ProjectAccordion } from './ProjectAccordion';
+import { ROW_1_PROJECTS, ROW_2_PROJECTS } from '../../data/projectsData';
 
 const STICKER_PILLS = [
   {
@@ -133,7 +56,11 @@ const STICKER_PILLS = [
   },
 ];
 
-export function ProjectsTopContent() {
+interface ProjectsContentProps {
+  onSelectProject?: (projectId: string) => void;
+}
+
+export function ProjectsTopContent({ onSelectProject }: ProjectsContentProps = {}) {
   return (
     <div className="w-full">
       {/* Section Header */}
@@ -147,18 +74,26 @@ export function ProjectsTopContent() {
       </div>
 
       {/* Row 1 Interactive Project Accordion */}
-      <ProjectAccordion projects={DUMMY_PROJECTS_ROW_1} defaultActiveIndex={0} />
+      <ProjectAccordion
+        projects={ROW_1_PROJECTS}
+        defaultActiveIndex={0}
+        onSelectProject={onSelectProject}
+      />
     </div>
   );
 }
 
-export function ProjectsBottomContent() {
+export function ProjectsBottomContent({ onSelectProject }: ProjectsContentProps = {}) {
   const constraintsRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="w-full">
       {/* Row 2 Interactive Project Accordion */}
-      <ProjectAccordion projects={DUMMY_PROJECTS_ROW_2} defaultActiveIndex={0} />
+      <ProjectAccordion
+        projects={ROW_2_PROJECTS}
+        defaultActiveIndex={0}
+        onSelectProject={onSelectProject}
+      />
 
       {/* Bottom Interactive Bouncy Sticker Pills Pile */}
       <div
@@ -206,14 +141,14 @@ export function ProjectsBottomContent() {
   );
 }
 
-export function ProjectsSection() {
+export function ProjectsSection({ onSelectProject }: ProjectsContentProps = {}) {
   return (
     <div className="mx-auto w-full max-w-300 px-6 lg:px-12 pt-6 pb-24">
-      <ProjectsTopContent />
+      <ProjectsTopContent onSelectProject={onSelectProject} />
       <div className="my-8">
         <AnnouncementTicker showGuides={true} />
       </div>
-      <ProjectsBottomContent />
+      <ProjectsBottomContent onSelectProject={onSelectProject} />
     </div>
   );
 }

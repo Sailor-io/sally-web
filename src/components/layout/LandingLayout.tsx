@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 
 interface LandingLayoutProps {
   children: React.ReactNode;
-  activeView?: 'hero' | 'projects';
+  activeView?: 'hero' | 'projects' | 'project-detail';
   onNavigateToProjects?: () => void;
   onNavigateToHome?: () => void;
 }

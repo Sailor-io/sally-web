@@ -8,21 +8,31 @@ export interface ProjectItem {
   description: string;
   tag: string;
   image: string;
-  link: string;
+  link?: string;
 }
 
 interface ProjectAccordionProps {
   projects: ProjectItem[];
   defaultActiveIndex?: number;
   className?: string;
+  onSelectProject?: (projectId: string) => void;
 }
 
 export function ProjectAccordion({
   projects,
   defaultActiveIndex = 0,
   className = '',
+  onSelectProject,
 }: ProjectAccordionProps) {
   const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
+
+  const handleCardClick = (idx: number, projectId: string) => {
+    if (activeIndex === idx && onSelectProject) {
+      onSelectProject(projectId);
+    } else {
+      setActiveIndex(idx);
+    }
+  };
 
   return (
     <BlueprintFrame
@@ -39,7 +49,7 @@ export function ProjectAccordion({
             <div
               key={project.id}
               onMouseEnter={() => setActiveIndex(idx)}
-              onClick={() => setActiveIndex(idx)}
+              onClick={() => handleCardClick(idx, project.id)}
               onFocus={() => setActiveIndex(idx)}
               tabIndex={0}
               role="button"
@@ -88,10 +98,15 @@ export function ProjectAccordion({
                   <p className="mt-1.5 text-sm sm:text-base text-gray-500 font-sans line-clamp-2 leading-relaxed">
                     {project.description}
                   </p>
-                  <a
-                    href={project.link}
-                    onClick={(e) => e.stopPropagation()}
-                    className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors group/link"
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (onSelectProject) {
+                        onSelectProject(project.id);
+                      }
+                    }}
+                    className="mt-3.5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors group/link cursor-pointer bg-transparent border-0 p-0"
                   >
                     <span>Learn more</span>
                     <svg
@@ -107,7 +122,7 @@ export function ProjectAccordion({
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </a>
+                  </button>
                 </div>
               </div>
 
