@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 
 interface LandingLayoutProps {
   children: React.ReactNode;
-  activeView?: 'hero' | 'projects';
+  activeView?: 'hero' | 'projects' | 'project-detail';
   onNavigateToProjects?: () => void;
   onNavigateToHome?: () => void;
 }
@@ -18,7 +18,7 @@ export function LandingLayout({
   onNavigateToHome,
 }: LandingLayoutProps) {
   return (
-    <div className="relative min-h-screen w-full overflow-x-hidden bg-bg text-text-primary transition-colors duration-300">
+    <div className="relative min-h-screen w-full overflow-x-clip bg-bg text-text-primary transition-colors duration-300">
       {/* Interactive Starfield Canvas Background */}
       <StarfieldBackground />
 

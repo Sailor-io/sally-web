@@ -8,7 +8,7 @@ import logoLight from '../../assets/svgs/LogoLight.svg';
 interface NavbarProps {
   onNavigateToProjects?: () => void;
   onNavigateToHome?: () => void;
-  activeView?: 'hero' | 'projects';
+  activeView?: 'hero' | 'projects' | 'project-detail';
 }
 
 function ThemeToggle() {
@@ -109,7 +109,7 @@ export function Navbar({ onNavigateToProjects, onNavigateToHome, activeView = 'h
                 type="button"
                 onClick={onNavigateToProjects}
                 className={`rounded-lg px-3.5 py-2 font-sans text-base font-semibold transition-colors cursor-pointer bg-transparent border-0 ${
-                  activeView === 'projects'
+                  activeView === 'projects' || activeView === 'project-detail'
                     ? 'text-primary-400 font-bold'
                     : 'text-text-secondary hover:text-text-primary'
                 }`}
@@ -240,7 +240,7 @@ export function Navbar({ onNavigateToProjects, onNavigateToHome, activeView = 'h
                       onNavigateToProjects?.();
                     }}
                     className={`text-left font-sans text-2xl font-medium tracking-tight underline decoration-1 underline-offset-8 transition-colors cursor-pointer ${
-                      activeView === 'projects'
+                      activeView === 'projects' || activeView === 'project-detail'
                         ? 'text-primary-400 font-bold'
                         : 'text-text-primary hover:text-primary-300'
                     }`}
