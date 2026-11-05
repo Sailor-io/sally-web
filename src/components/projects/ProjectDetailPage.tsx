@@ -85,9 +85,9 @@ export function ProjectDetailPage({
       </BlueprintFrame>
 
       {/* 3. Two-Column Case Study Content Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 pt-10 sm:pt-14 pb-12">
-        {/* Left Column: Sticky Project Metadata & Brief */}
-        <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6 sm:space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 pt-10 sm:pt-14 pb-12 items-start">
+        {/* Left Column: Sticky Project Metadata & Brief (Remains permanently visible while reading) */}
+        <div className="lg:col-span-5 lg:sticky lg:top-24 self-start space-y-6 sm:space-y-8 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-2 scrollbar-none">
           <div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-[1.12]">
               {project.title}
@@ -137,11 +137,11 @@ export function ProjectDetailPage({
           </div>
         </div>
 
-        {/* Right Column: Narrative Case Study Deep Dive */}
-        <div className="lg:col-span-7 space-y-12 sm:space-y-16">
+        {/* Right Column: Self-Scrolling Narrative Case Study Deep Dive */}
+        <div className="lg:col-span-7 space-y-12 sm:space-y-16 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-4 custom-scrollbar overscroll-contain">
           {/* Section 1: The Problem */}
           <section className="space-y-5">
-            <div className="w-full overflow-hidden rounded-sm border border-border-subtle bg-bg-card aspect-16/10] sm:aspect-16/9] shadow-sm">
+            <div className="w-full overflow-hidden rounded-sm border border-border-subtle bg-bg-card aspect-[16/10] sm:aspect-[16/9] shadow-sm">
               <img
                 src={project.problem.image}
                 alt="The problem visual"
