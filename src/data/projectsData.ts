@@ -1,4 +1,4 @@
-import { convrrtImages, crestbaseImages, decagonImages, errandLrImages, meclabImages } from "../assets/project-images";
+import { convrrtImages, crestbaseImages, decagonImages, errandLrImages, homelyImages, meclabImages } from "../assets/project-images";
 
 export interface CaseStudySection {
   title: string;
@@ -217,111 +217,47 @@ export const ALL_PROJECTS: ProjectDetail[] = [
     },
   },
   {
-    id: 'crestbase-limited',
+    id: 'sally-collective',
     number: '06',
-    title: 'Crestbase Limited',
+    title: 'Sally Collective Works',
     description:
-      'A PropTech platform simplifying real estate financing, AI-powered property discovery, targeted housing savings, and short-let and event space bookings.',
-    tag: 'PropTech & Real Estate',
-    client: 'Crestbase Limited',
-    sector: 'Real Estate & PropTech',
-    year: '2025',
+      'A unified showcase of our cross-industry engineering and product design experience spanning AI, SaaS, fintech, logistics, education, and PropTech.',
+    tag: 'Collective Experience',
+    client: 'Multi-Sector Partners',
+    sector: 'AI, SaaS, Fintech, Logistics & PropTech',
+    year: '2020 – 2025',
     services: [
-      'Product Engineering',
-      'Property Listing & Discovery',
-      'AI Recommendation Workflows',
-      'Goal-Based Savings & Bookings',
-      'API Integration',
-      'Realtor Lead Generation',
+      'Full-stack Product Engineering',
+      'Web & Mobile Architecture',
+      'Design Systems & UI/UX',
+      'RESTful APIs & Data Modelling',
+      'AI & Third-party Integrations',
+      'QA, Code Reviews & Documentation',
     ],
-    image: crestbaseImages.crestbase_2,
-    heroImage: crestbaseImages.crestbase_1,
+    image: meclabImages.meclab_3,
+    heroImage: meclabImages.meclab_worldwide,
     problem: {
       title: 'The problem',
       description:
-        'Home seekers and investors faced fragmented property listings, limited structured saving options toward rent or homeownership, and friction when booking verified short-lets and spaces, while realtors struggled to connect with high-intent, financially ready clients.',
-      image: crestbaseImages.crestbase_2,
+        'Growing businesses across logistics, marketing tech, education, payments, and real estate often face fragmented user journeys, inconsistent interfaces, and engineering bottlenecks that slow down reliable delivery across web and mobile.',
+      image: errandLrImages.errand_lr_3,
     },
     solution: {
       title: 'The solution',
       description:
-        'We built an integrated real estate ecosystem combining goal-driven AI property recommendations, high-yield property savings plans, seamless bookings for short-lets, hotels, resorts and event spaces, and verified listing management for real estate companies and agents.',
-      image: crestbaseImages.crestbase_3,
+        'Drawing on our collective work across Errandlr, MECLABS AI, CONVRRT, Decagon, Sailor.IO, Crestbase, and Homly, we pair scalable React, Next.js, and React Native interfaces with secure Node.js/Express APIs, reusable design systems, and clear technical documentation.',
+      image: convrrtImages.converrt_3,
     },
     impact: {
       title: 'The impact',
       description:
-        'Unified property discovery, structured savings, and space bookings into a single platform, helping users match with verified properties aligned to their budget and timeline while giving real estate partners a direct channel to qualified leads.',
-      image: crestbaseImages.crestbase_3,
-    },
-  },
-  {
-    id: 'home-podiatry',
-    number: '07',
-    title: 'Home Podiatry',
-    description:
-      'A podiatry business focused on foot care. Specific services require confirmation.',
-    tag: 'Website',
-    client: 'Home Podiatry',
-    sector: 'Podiatry & Healthcare',
-    year: '2025',
-    services: ['Mobile Health UX', 'Biometric Visualizations', 'HIPAA Compliant Design', 'iOS App'],
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=85',
-    problem: {
-      title: 'The problem',
-      description:
-        'To confirm: the patient or business needs that prompted the website project.',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80',
-    },
-    solution: {
-      title: 'The solution',
-      description:
-        'To confirm: the pages, features and integrations you implemented.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
-    },
-    impact: {
-      title: 'The impact',
-      description:
-        'To confirm: the capabilities delivered and any verified improvements to the patient experience.',
-   image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80',
-    },
-  },
-  {
-    id: 'turbo-fleet',
-    number: '08',
-    title: 'Turbo Fleet',
-    description:
-      'To confirm: the company services and purpose of the digital product you developed.',
-    tag: 'Web Project',
-    client: 'Turbo Fleet',
-    sector: 'To confirm',
-    year: '2025',
-    services: ['Hardware Touch UI', 'Mobile & Tablet App', 'Energy Analytics', 'Design System'],
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85',
-    problem: {
-      title: 'The problem',
-      description:
-        'To confirm: the customer or operational challenge addressed by the project.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-    },
-    solution: {
-      title: 'The solution',
-      description:
-        'To confirm: the frontend features, technologies and integrations you delivered.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-    },
-    impact: {
-      title: 'The impact',
-      description:
-        'To confirm: the delivered capabilities and verified results of your frontend work.',
-   image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+        'Consistently delivered production web platforms, cross-platform mobile apps, multi-tenant builders, and backend architectures—enabling partner teams to ship faster, maintain high code quality, and create cohesive experiences for their users.',
+      image: decagonImages.decagon_3,
     },
   },
   {
     id: 'crestbase',
-    number: '09',
+    number: '07',
     title: 'Crestbase Limited',
     description:
       'A real estate platform enabling agents and companies to publish, manage and search property listings.',
@@ -338,30 +274,30 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'Search & Filtering',
       'MongoDB Data Modelling',
       'Backend Architecture',
-    ],image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85',
+    ],image: crestbaseImages.crestbase_1,
+    heroImage: crestbaseImages.crestbase_2,
     problem: {
       title: 'The problem',
       description:
         'Agents and companies needed secure account access, property management and flexible listing search.',
-   image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
+   image: crestbaseImages.crestbase_3,
     },
     solution: {
       title: 'The solution',
       description:
         'I built Express APIs with JWT access controls, MongoDB models, property uploads and search filters.',
-  image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
+  image: crestbaseImages.crestbase_3,
     },
     impact: {
       title: 'The impact',
       description:
         'Enabled account registration, authenticated property management and searches by location, type and price. Developed data models linking users, properties and transaction records, with rental and purchase status updates.',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    image: crestbaseImages.crestbase_1,
     },
   },
   {
     id: 'homly',
-    number: '10',
+    number: '08',
     title: 'Homly',
     description:
       'A property management platform helping landlords and accommodation operators manage rentals and tenant workflows.',
@@ -376,25 +312,25 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'Backend Endpoint Implementation',
       'End-to-end API Testing',
       'Technical Design Collaboration',
-    ],image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=85',
+    ],image: homelyImages.homely_1,
+    heroImage: homelyImages.homely_2,
     problem: {
       title: 'The problem',
       description:
         'The product needed frontend features connected to reliable APIs and tested against project requirements.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
+    image: homelyImages.homely_1,
     },
     solution: {
       title: 'The solution',
       description:
         'I built Next.js features and Express endpoints, collaborated on design and performed end-to-end API testing.',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80',
+    image: homelyImages.homely_1,
     },
     impact: {
       title: 'The impact',
       description:
         'Delivered frontend features and backend endpoints aligned with project requirements. Supported system quality through end-to-end API testing and maintainable implementation practices.',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+    image: homelyImages.homely_3,
     },
   },
 ];

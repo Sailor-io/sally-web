@@ -14,6 +14,10 @@ import crestbase_3 from './crestbase-3.png';
 import decagon_1 from './decagon-1.png';
 import decagon_2 from './decagon-2.png';
 import decagon_3 from './decagon-3.png';
+import homely_1 from './homely-1.png';
+import homely_2 from './homely-2.png';
+import homely_3 from './homely-3.png';
+import homely_4 from './homely-4.png';
 
 export const errandLrImages = {
   errand_lr_1,
@@ -44,4 +48,11 @@ export const decagonImages = {
   decagon_1,
   decagon_2,
   decagon_3
+}
+
+export const homelyImages = {
+  homely_1,
+  homely_2,
+  homely_3,
+  homely_4
 }
