@@ -1,3 +1,5 @@
+import { errandLrImages, meclabImages } from "../assets/project-images";
+
 export interface CaseStudySection {
   title: string;
   description: string;
@@ -40,25 +42,25 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'PWA Implementation',
       'Google Maps & Geocoding',
       'Developer Documentation',
-    ],    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=85',
+    ],    image: errandLrImages.errand_lr_1,
+    heroImage: errandLrImages.errand_lr_1,
     problem: {
       title: 'The problem',
       description:
         'Customers needed simpler delivery management, while developers needed shared documentation and clear requirements.',
-      image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80',
+      image: errandLrImages.errand_lr_2,
     },
     solution: {
       title: 'The solution',
       description:
         'I developed delivery dashboards, integrated APIs and maps, and created a shared developer documentation workspace.',
-     image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1200&q=80',
+     image: errandLrImages.errand_lr_3,
     },
     impact: {
       title: 'The impact',
       description:
         'Delivered customer-facing delivery features and supported ongoing application maintenance. Improved knowledge sharing through a central developer workspace and clear client documentation.',
-     image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+     image: errandLrImages.errand_lr_2,
     },
   },
   {
@@ -79,25 +81,25 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'AI Assistant Management',
       'AI Chat Widget Integration',
       'Code Reviews',
-    ],  image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    ],  image: meclabImages.meclab_1,
     heroImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=85',
     problem: {
       title: 'The problem',
       description:
         'Teams needed centralised management of users and AI assistants, alongside chat support on external websites.',
-     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80',
+     image: meclabImages.meclab_2,
     },
     solution: {
       title: 'The solution',
       description:
         'I built a React admin interface using Jotai and Material-UI and helped integrate an AI chat widget.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    image: meclabImages.meclab_1,
     },
     impact: {
       title: 'The impact',
       description:
         'Delivered administration tools for users, teams, organisations and AI assistants. Contributed to real-time website assistance and supported code quality through collaboration and reviews.',
-     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+     image: meclabImages.meclab_worldwide,
     },
   },
   {
@@ -215,13 +217,13 @@ export const ALL_PROJECTS: ProjectDetail[] = [
     },
   },
   {
-    id: 'sprynt',
+    id: 'Crestbase Limited',
     number: '06',
-    title: 'Sprynt',
+    title: 'Crestbase Limited',
     description:
       'A business software provider offering digital workflows, including paperless admissions and application processing.',
     tag: 'Business Software',
-    client: 'Sprynt',
+    client: 'Crestbase Limited',
     sector: 'Business Technology & Education Software',
     year: '2025',
     services: ['Enterprise UX', 'Real-time Tracking Map', 'Design System', 'API Integration'],
