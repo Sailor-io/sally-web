@@ -1,4 +1,4 @@
-import { errandLrImages, meclabImages } from "../assets/project-images";
+import { convrrtImages, crestbaseImages, decagonImages, errandLrImages, meclabImages } from "../assets/project-images";
 
 export interface CaseStudySection {
   title: string;
@@ -120,25 +120,25 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'Feature Enhancements',
       'Code Reviews',
       'Quality Assurance',
-    ], image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=85',
+    ], image: convrrtImages.converrt_1,
+    heroImage: convrrtImages.converrt_1,
     problem: {
       title: 'The problem',
       description:
         'SaaS teams needed flexible landing page creation within their products, with experiences suited to different tenants.',
-    image: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    image: convrrtImages.converrt_2,
     },
     solution: {
       title: 'The solution',
       description:
         'I developed tenant experiences and landing page builder features, collaborating on grid layouts and code improvements.',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80',
+    image: convrrtImages.converrt_1,
     },
     impact: {
       title: 'The impact',
       description:
         'Contributed to page creation and layout capabilities for SaaS tenants. Improved existing functionality and supported implementation quality through code reviews and quality assurance.',
-    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=80',
+    image: convrrtImages.converrt_3,
     },
   },
   {
@@ -158,25 +158,25 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'Feature Implementation',
       'Post-deployment Frontend QA',
       'Cross-functional Collaboration',
-    ],image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=85',
+    ],image: decagonImages.decagon_1,
+    heroImage: decagonImages.decagon_1,
     problem: {
       title: 'The problem',
       description:
         'The platform needed consistent interfaces, reliable feature releases and components supporting complex interactions.',
-    image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80',
+    image: decagonImages.decagon_2,
     },
     solution: {
       title: 'The solution',
       description:
         'I developed interfaces and complex components, gathered feature requirements and checked releases after deployment.',
-     image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
+     image: decagonImages.decagon_3,
     },
     impact: {
       title: 'The impact',
       description:
         'Contributed to smoother platform interactions and improved functionality. Verified deployed features and worked across departments to translate requirements into implementations.',
-    image: 'https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?auto=format&fit=crop&w=1200&q=80',
+    image: decagonImages.decagon_2,
     },
   },
   {
@@ -217,35 +217,42 @@ export const ALL_PROJECTS: ProjectDetail[] = [
     },
   },
   {
-    id: 'Crestbase Limited',
+    id: 'crestbase-limited',
     number: '06',
     title: 'Crestbase Limited',
     description:
-      'A business software provider offering digital workflows, including paperless admissions and application processing.',
-    tag: 'Business Software',
+      'A PropTech platform simplifying real estate financing, AI-powered property discovery, targeted housing savings, and short-let and event space bookings.',
+    tag: 'PropTech & Real Estate',
     client: 'Crestbase Limited',
-    sector: 'Business Technology & Education Software',
+    sector: 'Real Estate & PropTech',
     year: '2025',
-    services: ['Enterprise UX', 'Real-time Tracking Map', 'Design System', 'API Integration'],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=85',
+    services: [
+      'Product Engineering',
+      'Property Listing & Discovery',
+      'AI Recommendation Workflows',
+      'Goal-Based Savings & Bookings',
+      'API Integration',
+      'Realtor Lead Generation',
+    ],
+    image: crestbaseImages.crestbase_2,
+    heroImage: crestbaseImages.crestbase_1,
     problem: {
       title: 'The problem',
       description:
-        'Legacy green-screen software and paper-heavy bills of lading caused shipment blind spots, port customs delays, and container demurrage penalties across 40+ international ports.',
-      image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80',
+        'Home seekers and investors faced fragmented property listings, limited structured saving options toward rent or homeownership, and friction when booking verified short-lets and spaces, while realtors struggled to connect with high-intent, financially ready clients.',
+      image: crestbaseImages.crestbase_2,
     },
     solution: {
       title: 'The solution',
       description:
-        'We designed a unified logistics orchestration web console with interactive satellite route tracking, predictive arrival estimates, and instant digital customs clearance documentation.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+        'We built an integrated real estate ecosystem combining goal-driven AI property recommendations, high-yield property savings plans, seamless bookings for short-lets, hotels, resorts and event spaces, and verified listing management for real estate companies and agents.',
+      image: crestbaseImages.crestbase_3,
     },
     impact: {
       title: 'The impact',
       description:
-        'Customs processing times dropped from 48 hours to under 30 minutes, transit delay penalties fell by 82%, and cargo tracking accuracy reached 99.8%.',
-      image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80',
+        'Unified property discovery, structured savings, and space bookings into a single platform, helping users match with verified properties aligned to their budget and timeline while giving real estate partners a direct channel to qualified leads.',
+      image: crestbaseImages.crestbase_3,
     },
   },
   {

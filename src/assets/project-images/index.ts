@@ -5,6 +5,15 @@ import meclab_1 from './meclab-1.png';
 import meclab_2 from './meclab-2.png';
 import meclab_3 from './meclab-3.png';
 import meclab_worldwide from './meclan-worldwide.png';
+import converrt_1 from './convrrt-1.png';
+import converrt_2 from './convrrt-2.png';
+import converrt_3 from './convrrt-3.png';
+import crestbase_1 from './crestbase-1.png';
+import crestbase_2 from './crestbase-2.png';
+import crestbase_3 from './crestbase-3.png';
+import decagon_1 from './decagon-1.png';
+import decagon_2 from './decagon-2.png';
+import decagon_3 from './decagon-3.png';
 
 export const errandLrImages = {
   errand_lr_1,
@@ -18,3 +27,21 @@ export const meclabImages = {
   meclab_3,
   meclab_worldwide,
 };
+
+export const convrrtImages = {
+  converrt_1,
+  converrt_2,
+  converrt_3
+}
+
+export const crestbaseImages = {
+  crestbase_1,
+  crestbase_2,
+  crestbase_3
+}
+
+export const decagonImages = {
+  decagon_1,
+  decagon_2,
+  decagon_3
+}
