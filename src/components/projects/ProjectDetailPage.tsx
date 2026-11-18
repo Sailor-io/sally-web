@@ -141,7 +141,7 @@ export function ProjectDetailPage({
         <div className="lg:col-span-7 space-y-12 sm:space-y-16 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto lg:pr-4 custom-scrollbar overscroll-contain">
           {/* Section 1: The Problem */}
           <section className="space-y-5">
-            <div className="w-full overflow-hidden rounded-sm border border-border-subtle bg-bg-card aspect-[16/10] sm:aspect-[16/9] shadow-sm">
+            <div className="w-full overflow-hidden rounded-sm border border-border-subtle bg-bg-card aspect-16/10 sm:aspect-video shadow-sm">
               <img
                 src={project.problem.image}
                 alt="The problem visual"
