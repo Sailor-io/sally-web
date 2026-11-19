@@ -18,6 +18,10 @@ import homely_1 from './homely-1.png';
 import homely_2 from './homely-2.png';
 import homely_3 from './homely-3.png';
 import homely_4 from './homely-4.png';
+import sailor_1 from './sailor-1.jpg';
+import sailor_2 from './sailor-2.png';
+import sailor_3 from './sailor-3.png';
+import sailor_prob from './sailor-prob.jpg';
 
 export const errandLrImages = {
   errand_lr_1,
@@ -55,4 +59,11 @@ export const homelyImages = {
   homely_2,
   homely_3,
   homely_4
+}
+
+export const sailorImages = {
+  sailor_1,
+  sailor_2,
+  sailor_3,
+  sailor_prob
 }
