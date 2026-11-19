@@ -1,4 +1,4 @@
-import { convrrtImages, crestbaseImages, decagonImages, errandLrImages, homelyImages, meclabImages } from "../assets/project-images";
+import { convrrtImages, crestbaseImages, decagonImages, errandLrImages, homelyImages, meclabImages, sailorImages } from "../assets/project-images";
 
 export interface CaseStudySection {
   title: string;
@@ -195,25 +195,25 @@ export const ALL_PROJECTS: ProjectDetail[] = [
       'Expo Managed Workflow',
       'Cross-platform Feature Implementation',
       'iOS & Android Development',
-    ],image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=85',
+    ],image: sailorImages.sailor_1,
+    heroImage: sailorImages.sailor_1,
     problem: {
       title: 'The problem',
       description:
         'Sailor.io needed a consistent mobile experience across iOS and Android with a streamlined development workflow.',
-    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
+    image: sailorImages.sailor_prob,
     },
     solution: {
       title: 'The solution',
       description:
         'I developed the mobile app using React Native and Expo, implementing core features across both platforms.',
-   image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+   image: sailorImages.sailor_3,
     },
     impact: {
       title: 'The impact',
       description:
         'Delivered a cross-platform mobile application with shared functionality for iOS and Android, using the Expo managed workflow to streamline development and deployment.',
-   image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+   image: sailorImages.sailor_2,
     },
   },
   {
